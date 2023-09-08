@@ -1,0 +1,34 @@
+{
+  "hostname": {
+    "DRN": {
+      "6": null,
+      "12": null,
+      "18": null
+    },
+    "ED-DRN": {
+      "6": null,
+      "12": null,
+      "18": null
+    },
+    "ST-DRN": {
+      "6": null,
+      "12": null,
+      "18": null
+    },
+    "BQN": {
+      "6": null,
+      "12": null,
+      "18": null
+    },
+    "ED-BQN": {
+      "6": null,
+      "12": null,
+      "18": null
+    },
+    "ST-BQN": {
+      "6": null,
+      "12": null,
+      "18": null
+    }
+  }
+}

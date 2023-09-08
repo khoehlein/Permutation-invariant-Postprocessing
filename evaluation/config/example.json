@@ -1,0 +1,9 @@
+{
+  "hostname": {
+    "model-key": {
+      "lead-time-1": "/path/to/run/directory",
+      "lead-time-2": "/path/to/run/directory",
+      "lead-time-3": "/path/to/run/directory"
+    }
+  }
+}

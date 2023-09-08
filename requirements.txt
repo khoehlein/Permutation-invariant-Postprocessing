@@ -1,0 +1,25 @@
+--extra-index-url https://download.pytorch.org/whl/cu117
+bokeh
+captum
+cftime
+dask[complete]
+eccodes
+h5py
+holoviews[all]
+jupyterlab
+lightning
+matplotlib
+mlflow[extras]
+netCDF4
+networkx
+numpy
+pandas
+scikit-learn
+scipy
+tensorboard
+torch
+torchaudio
+torchvision
+tqdm
+xarray
+zarr
