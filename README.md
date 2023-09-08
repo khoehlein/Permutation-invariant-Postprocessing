@@ -1,5 +1,7 @@
 # Postprocessing of Ensemble Weather Forecasts Using Permutation-invariant Neural Networks
 
+[![DOI](https://zenodo.org/badge/689015596.svg)](https://zenodo.org/badge/latestdoi/689015596)
+
 Code for the paper "Postprocessing of Ensemble Weather Forecasts Using Permutation-invariant Neural Networks" by Kevin Höhlein, Benedikt Schulz, Rüdiger Westermann and Sebastian Lerch.
 
 ## Installation
