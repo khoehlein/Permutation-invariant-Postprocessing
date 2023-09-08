@@ -1,6 +1,3 @@
-[submodule "external/pp_schulz_lerch"]
-	path = external/pp_schulz_lerch
-	url = https://github.com/khoehlein/paper_pp_wind_gusts.git
 [submodule "utils"]
 	path = utils
 	url = https://github.com/khoehlein/generic-utils.git
