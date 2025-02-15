@@ -18,7 +18,9 @@ Parts of the evaluation rely on the availability of an R installation. We recomm
 ## Datasets
 
 The paper investigates the utility of permutation-invariant neural networks for statistical postprocessing of ensemble weather forecasts using two forecast-observation datasets for wind-gust (COSMO-DE dataset) and surface temperature postprocessing (EUPPBench dataset). 
-Training own models requires downloading parts of the data and listing the data location in path config files for it to be found by the training scripts
+Training own models requires downloading parts of the data and listing the data location in path config files for it to be found by the training scripts. 
+
+Researchers interested in reproducing our results for comparisons against their own models should additionally consider the known issues section at the end of this document. 
 
 ### Downloading data
 
@@ -187,3 +189,13 @@ Permutation importance scores can be computed with [`eval_scalar_predictors.py`]
 and [`eval_single_features.py`](evaluation/feature_permutation/euppbench/eval_single_features.py) for ensemble-based architectures.
 
 The implementation of the binned shuffling perturbation is located in [`perturbations.py`](evaluation/feature_permutation/perturbations.py).
+
+## Known issues
+
+In subsequent work, Sebastian Lerch and colleagues pointed out that the data preparation code in the EUPPBench case study deviates from the procedures described in the paper.
+
+- Table A2 in the paper states that parameters q, r, and cin are used as inputs to the models. However, the parameters are not loaded in the code. The accurate list of dynamic input parameters can be found in the parameter `DYNAMIC_PREDICTORS` in the file [`data/euppbench/reforecasts.py`](data/euppbench/reforecasts.py).
+
+- The training-validation-test splitting of the available data is not based on forecast valid times, as stated in the paper, but based on the yearly shift of the reforecast dates backwards in time. The code splits the `year` axis in the source data array into non-overlapping sections of length 12 (training), 4 (validation), and 4 (test), which is not aligned with years in terms of forecast valid times. The procedure is implemented in in the file [`data/euppbench/reforecasts.py`](data/euppbench/reforecasts.py). For details about the timestamp layout of the EUPPBench dataset, see the [source publication](https://doi.org/10.5194/essd-15-2635-2023), in which the dataset was presented.
+
+The code has been executed identically for all experiments related to the EUPPBench dataset, equally for both reforecasts and forecasts. Accordingly all comparisons remain valid and consistent. Effects on the shown performance scores are expected to be minor. Still, authors interested in reproducing our results should consider the differences. The experiments concerning the wind gust study are unaffected. 
