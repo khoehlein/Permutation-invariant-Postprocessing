@@ -192,7 +192,7 @@ The implementation of the binned shuffling perturbation is located in [`perturba
 
 ## Known issues
 
-In subsequent work, Sebastian Lerch and colleagues pointed out that the data preparation code in the EUPPBench case study deviates from the procedures described in the paper.
+In subsequent work, Lerch and colleagues pointed out that the data preparation code in the EUPPBench case study deviates from the procedures described in the paper.
 
 - Table A2 in the paper states that parameters q, r, and cin are used as inputs to the models. However, the parameters are not loaded in the code. The accurate list of dynamic input parameters can be found in the parameter `DYNAMIC_PREDICTORS` in the file [`data/euppbench/reforecasts.py`](data/euppbench/reforecasts.py).
 
